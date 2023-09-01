@@ -42,7 +42,7 @@ const MovieRows = ({ item }) => {
         <p className="text-white font-bold md:text-sm text-xs flex justify-center items-center h-full  text-center ">
           {item?.title}
         </p>
-        <p onClick={saveMovie} className="text-gray-300 absolute top-4 left-4 ">
+        <p onClick={save} className="text-gray-300 absolute top-4 left-4 ">
           {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
         </p>
       </div>

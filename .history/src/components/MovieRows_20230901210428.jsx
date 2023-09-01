@@ -4,7 +4,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useState } from "react";
 import { UserAuth } from "./context/AuthContext";
 import { db } from "./firebase";
-import ErrorMessage from "./ErrorMessage";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 const MovieRows = ({ item }) => {
@@ -13,21 +12,19 @@ const MovieRows = ({ item }) => {
   const [saved, setSaved] = useState(false);
   const movieID = doc(db, "users", `${user?.email}`);
 
-  const saveMovie = async () => {
-    if (user?.email) {
-      setLiked(!isLiked);
-      setSaved(true);
-      await updateDoc(movieID, {
-        savedShows: arrayUnion({
-          id: item.id,
-          title: item.title,
-          img: item.backdrop_path,
-        }),
-      });
-    } else {
-      <ErrorMessage message={"Please log in to save a movie"} />;
-    }
-  };
+const saveMovie = async()=>{
+  if(user?.email){
+    setLiked(!isLiked)
+    setSaved(true)
+    await updateDoc(movieID,{
+      savedShows:arrayUnion({
+        id:item.id,
+        title:item.title,
+        img:item:backd
+      })
+    })
+  }
+}
   return (
     <div
       key={item.id}
@@ -42,7 +39,7 @@ const MovieRows = ({ item }) => {
         <p className="text-white font-bold md:text-sm text-xs flex justify-center items-center h-full  text-center ">
           {item?.title}
         </p>
-        <p onClick={saveMovie} className="text-gray-300 absolute top-4 left-4 ">
+        <p className="text-gray-300 absolute top-4 left-4 ">
           {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
         </p>
       </div>

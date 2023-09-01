@@ -4,7 +4,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useState } from "react";
 import { UserAuth } from "./context/AuthContext";
 import { db } from "./firebase";
-import ErrorMessage from "./ErrorMessage";
+import
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 const MovieRows = ({ item }) => {
@@ -42,7 +42,7 @@ const MovieRows = ({ item }) => {
         <p className="text-white font-bold md:text-sm text-xs flex justify-center items-center h-full  text-center ">
           {item?.title}
         </p>
-        <p onClick={saveMovie} className="text-gray-300 absolute top-4 left-4 ">
+        <p className="text-gray-300 absolute top-4 left-4 ">
           {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
         </p>
       </div>

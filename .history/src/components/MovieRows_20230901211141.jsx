@@ -25,7 +25,7 @@ const MovieRows = ({ item }) => {
         }),
       });
     } else {
-      <ErrorMessage message={"Please log in to save a movie"} />;
+      aler
     }
   };
   return (
