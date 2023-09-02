@@ -19,7 +19,7 @@ const MovieRows = ({ item }) => {
       await updateDoc(movieID, {
         savedShows: arrayUnion({
           id: item.id,
-          movieTitle: item.title,
+          Mo: item.title,
           img: item.backdrop_path,
         }),
       });

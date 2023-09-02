@@ -4,6 +4,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useState } from "react";
 import { UserAuth } from "./context/AuthContext";
 import { db } from "./firebase";
+import ErrorMessage from "./ErrorMessage";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 const MovieRows = ({ item }) => {
@@ -19,12 +20,12 @@ const MovieRows = ({ item }) => {
       await updateDoc(movieID, {
         savedShows: arrayUnion({
           id: item.id,
-          movieTitle: item.title,
+          title: item.title,
           img: item.backdrop_path,
         }),
       });
     } else {
-      alert("Please log in to save a movie");
+       
     }
   };
   return (
