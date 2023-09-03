@@ -20,7 +20,11 @@ Navigate to the "Liked Movies" page to see your liked movies and remove them if 
 Technologies Used
 
 React: A JavaScript library for building user interfaces
+
 Firebase: A cloud-based platform for building and managing web and mobile applications, used for authentication and data storage
+
 Tailwind CSS: A utility-first CSS framework for rapidly building custom user interfaces
+
 React Router DOM: A library for handling routing and navigation in a React application
+
 Netlify: A cloud hosting platform for deploying web applications with ease
