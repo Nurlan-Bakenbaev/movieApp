@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { UserAuth } from "./context/AuthContext";
 import { db } from "./firebase";
 import { updateDoc, doc, onSnapshot } from "firebase/firestore";
-import ClearIcon from "@mui/icons-material/Clear";
+import ClearIcon from '@mui/icons-material/Clear';
 
 const SavedShows = () => {
   const [movies, setMovies] = useState([]);
@@ -47,18 +47,13 @@ const SavedShows = () => {
       }
     }
   };
-  const movieRef = doc(db, "users", `${user?.email}`);
-  const deleteShow = async (passedID) => {
-    try {
-      const result = movies.filter((item) => item.id !== passedID);
-      await updateDoc(movieRef, {
-        savedShows: result,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+const movieRef = doc(db,'users',`${user?.email}`)
+const deleteShhow = async()=>{
+try{
+    
+}
+}
+ 
   return (
     <>
       <h1 className="text-gray-200 p-4 fond-bold md:text-xl">Movies</h1>
@@ -87,12 +82,7 @@ const SavedShows = () => {
                 <p className="text-white font-bold md:text-sm text-xs flex justify-center items-center h-full  text-center ">
                   {item?.movieTitle}
                 </p>
-                <p
-                  onClick={() => {
-                    deleteShow(item.id);
-                  }}
-                  className="text-gray-300 absolute top-4 right-4"
-                >
+                <p onClick={()=>{deleteShow(item.id)}} className="text-gray-300 absolute top-4 right-4">
                   <ClearIcon />
                 </p>
               </div>
