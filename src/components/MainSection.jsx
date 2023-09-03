@@ -6,11 +6,11 @@ const Main = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios.get(requests.requestPopular).then((response) => {
+      console.log(response.data.results)
       setMovies(response.data.results);
-      console.log(response.data) 
     });
   }, []);
-  
+
   const truncateString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";
@@ -48,10 +48,11 @@ const Main = () => {
             </button>
           </div>
           <p className="text-gray-400 text-sm">
-            Released: {movie?.release_date} rating:<span className="text-sm text-white m-1 p-1 bg-orange-500 rounded">{`TMDB ${movie?.vote_average}`}</span>
+            Released: {movie?.release_date} rating:
+            <span className="text-sm text-white m-1 p-1 bg-orange-500 rounded">{`TMDB ${movie?.vote_average}`}</span>
           </p>
           <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
-            {truncateString(movie?.overview, 150)} 
+            {truncateString(movie?.overview, 150)}
           </p>
         </div>
       </div>

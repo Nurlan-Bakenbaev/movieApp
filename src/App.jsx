@@ -4,7 +4,9 @@ import Home from "./components/pages/Home";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
 import Account from "./components/pages/Account";
+import MovieDetail from "./components/pages/MovieDetail";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Footer from "./components/Footer";
 
 import { AuthContextProvider } from "./components/context/AuthContext.jsx";
 function App() {
@@ -24,7 +26,9 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/movie" element={<MovieDetail />} />
         </Routes>
+        <Footer/>
       </AuthContextProvider>
     </>
   );
