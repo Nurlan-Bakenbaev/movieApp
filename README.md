@@ -5,7 +5,7 @@ Introduction
 
 My Movie Site is a web application built using React, Firebase for authentication and data storage, and other technologies to create an interactive and user-friendly movie website. Users can sign up, log in, and explore a list of the latest top movies. They can also like movies, which will be stored in a liked movies page.
 
-Important ! This project is still under development.
+Important ! This project is still under development
 
 
 Usage
